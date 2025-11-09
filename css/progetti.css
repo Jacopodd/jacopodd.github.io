@@ -18,10 +18,17 @@
 }
 .tab-content {
   display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
 }
+
 .tab-content.show {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
@@ -31,12 +38,60 @@
   background: var(--secondary);
   padding: 1.2rem;
   border-radius: 10px;
-  transition: transform 0.3s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
 }
+
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) rotateX(3deg) rotateY(-3deg);
+  box-shadow: 0 10px 20px rgba(255, 127, 17, 0.2);
 }
+
 .project-card h5 {
   color: var(--accent);
   margin-bottom: 0.5rem;
+  transition: text-shadow 0.3s ease;
 }
+
+.project-card:hover h5 {
+  text-shadow: 0 0 8px rgba(255,127,17,0.8);
+}
+
+/* --- reveal on scroll --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: opacity, transform;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* opzionale: glow sul titolo già proposto */
+.project-card h5 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  transition: text-shadow 0.3s ease;
+}
+.project-card:hover h5 {
+  text-shadow: 0 0 8px rgba(255,127,17,0.8);
+}
+
+/* transizione tra tab con vera animazione (senza display:none) */
+.tabs + .tab-content,
+.tab-content {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  overflow: hidden;
+  transition: max-height .45s ease, opacity .45s ease, transform .45s ease;
+}
+.tab-content.show {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 2000px; /* abbastanza grande da contenere la griglia */
+}
+
+

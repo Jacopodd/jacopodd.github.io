@@ -31,16 +31,24 @@
     padding: 2rem;
   }
 
+  /* ===== Immagine profilo rettangolare ===== */
   .profile-pic {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
+    width: 220px;              /* leggermente più grande per dare presenza */
+    height: 260px;             /* proporzioni verticali armoniose */
+    border-radius: 18px;       /* angoli arrotondati */
     border: 3px solid var(--accent);
-    object-fit: cover;
+    object-fit: cover;         /* mantiene proporzioni corrette e riempie il box */
     background-color: var(--secondary);
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
     box-shadow: 0 0 25px rgba(255, 127, 17, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+
+  .profile-pic:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 35px rgba(255, 127, 17, 0.45);
+  }
+
 
   .name {
     color: var(--accent);

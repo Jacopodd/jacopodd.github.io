@@ -3,15 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- FONT AWESOME (CDN senza integrity) -->
- <!-- FONT AWESOME (fix per GitHub Pages / mobile) -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-  crossorigin="anonymous"
-/>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
   <title>Jacopo de Dominicis – Cybersecurity Portfolio</title>
@@ -22,24 +15,7 @@
   <link rel="stylesheet" href="css/progetti.css" />
   <link rel="stylesheet" href="css/esperienza.css" />
 
-  <style>
-    @media (min-width: 901px) {
-  .layout {
-    display: flex;
-  }
 
-  .profile-section {
-    order: 1; /* Sidebar sinistra */
-    position: sticky;
-    top: 0;
-  }
-
-  .content-section {
-    order: 2; /* Contenuto a destra */
-  }
-}
-
-  </style>
 </head>
 <body>
 
@@ -49,7 +25,7 @@
     <aside class="profile-section">
       <div class="profile-card">
         <img src="images/profile.png" alt="Foto profilo Jacopo D.D." class="profile-pic" />
-        <h1 class="name">Jacopo D.D.</h1>
+        <h1 class="name">Jacopo de Dominicis</h1>
         <p class="subtitle">Studente Magistrale in Sicurezza Informatica</p>
         <p class="bio">
           Appassionato di sviluppo software, cybersecurity e integrazione hardware.
@@ -58,7 +34,7 @@
         </p>
 
         <div class="socials">
-          <a href="https://www.linkedin.com/in/jacopo-de-dominicis/" target="_blank" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/jacopo-de-dominicis-b17ba5239/" target="_blank" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin"></i>
           </a>
           <a href="https://github.com/jacopodd" target="_blank" aria-label="GitHub">
@@ -159,15 +135,15 @@
 
         <div id="uni" class="tab-content show">
           <div class="project-grid">
-            <div class="project-card">
+            <div class="project-card reveal" data-aos="fade-up" data-aos-delay="100">
               <h5>Analisi di Sicurezza di Reti</h5>
               <p>Monitoraggio del traffico e rilevazione di anomalie su dataset accademici.</p>
             </div>
-            <div class="project-card">
+            <div class="project-card reveal" data-aos="fade-up" data-aos-delay="100">
               <h5>Applicazione Web Sicura</h5>
               <p>Web app con controlli OWASP e autenticazione sicura in Flask.</p>
             </div>
-            <div class="project-card">
+            <div class="project-card reveal" data-aos="fade-up" data-aos-delay="100">
               <h5>Forensics di Base</h5>
               <p>Catena di custodia, carving file e timeline analysis su casi di laboratorio.</p>
             </div>
@@ -313,6 +289,85 @@
   setActive();
   window.addEventListener("scroll", setActive, { passive: true });
 </script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
+  });
+</script>
+
+<script>
+  (function () {
+    const scrollRoot = document.querySelector('.content-section'); // il tuo contenitore scrollabile
+    const targets = () => Array.from(document.querySelectorAll('.reveal'));
+
+    // Stagger helper: applica un piccolo ritardo a cascata per gli elementi che entrano insieme
+    function applyStagger(entries) {
+      const byTop = entries
+        .filter(e => e.isIntersecting)
+        .sort((a,b) => a.target.getBoundingClientRect().top - b.target.getBoundingClientRect().top);
+      byTop.forEach((entry, i) => {
+        const el = entry.target;
+        // evita di riapplicare
+        if (!el.classList.contains('visible')) {
+          el.style.transitionDelay = (i * 70) + 'ms';
+          // force reflow per sicurezza
+          void el.offsetWidth;
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      applyStagger(entries);
+    }, {
+      root: scrollRoot,      // ❤️ osserva dentro .content-section
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.12
+    });
+
+    // osserva tutti i target attuali
+    function observeAll() {
+      targets().forEach(el => {
+        el.classList.remove('visible');            // reset per rientri o cambio tab
+        el.style.transitionDelay = '0ms';
+        observer.observe(el);
+      });
+    }
+    observeAll();
+
+    // integra col tuo sistema di tab: quando cambi tab, ri-osserva i nuovi elementi
+    const tabs = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabs.forEach(b => b.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("show"));
+
+        btn.classList.add("active");
+        const shown = document.getElementById(btn.dataset.target);
+        shown.classList.add("show");
+
+        // ricollega gli osservatori sugli elementi appena resi visibili
+        // Aspetta un frame perché max-height/opacity inizino la transizione
+        requestAnimationFrame(() => {
+          // disosserva tutto per sicurezza
+          observer.disconnect();
+          observeAll();
+        });
+      });
+    });
+
+    // prima evidenziazione dello stato attivo in mobile-nav l'hai già fatta
+    // non serve altro qui
+  })();
+</script>
+
+
 
 </body>
 </html>
