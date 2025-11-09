@@ -1,0 +1,117 @@
+/* ===== ESPERIENZA ===== */
+.experience {
+  margin-bottom: 6rem;
+  position: relative;
+}
+
+.experience h3 {
+  color: var(--accent);
+  font-size: 1.9rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+/* === Timeline verticale === */
+.exp-block {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+  border-left: 2px solid rgba(255, 127, 17, 0.3);
+}
+
+.exp-block::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateX(-6px);
+}
+
+.exp-block h4 {
+  color: var(--accent);
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+.exp-item {
+  background: rgba(22, 27, 34, 0.8);
+  border: 1px solid rgba(255, 127, 17, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 1.2rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.exp-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(255, 127, 17, 0.15);
+}
+
+/* === Titoli dei ruoli === */
+.exp-item h5 {
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* === Luogo e periodo === */
+.exp-place {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 0.7rem;
+  font-style: italic;
+}
+
+/* === Descrizione === */
+.exp-desc {
+  font-size: 0.95rem;
+  color: var(--text);
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Evidenzia l'esperienza attuale */
+.exp-item.current {
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(255, 127, 17, 0.25);
+}
+
+.exp-item.current::before {
+  color: var(--accent);
+  font-weight: bold;
+  margin-right: 0.4rem;
+}
+
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .exp-block {
+    padding-left: 1.2rem;
+  }
+
+  .exp-block::before {
+    width: 8px;
+    height: 8px;
+    transform: translateX(-4px);
+  }
+
+  .exp-item {
+    padding: 1.2rem 1rem;
+  }
+
+  .exp-item h5 {
+    font-size: 1rem;
+  }
+
+  .exp-desc {
+    font-size: 0.9rem;
+  }
+}

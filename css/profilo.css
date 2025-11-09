@@ -1,0 +1,66 @@
+/* ===== CARD PROFILO (SINISTRA) ===== */
+.profile-section {
+  width: 30%;
+  min-width: 320px;
+  background: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.profile-card {
+  text-align: center;
+  max-width: 300px;
+  padding: 2rem;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  object-fit: contain;
+  background-color: var(--secondary);
+  margin-bottom: 1.2rem;
+  box-shadow: 0 0 25px rgba(255,127,17,0.3);
+}
+
+.name {
+  color: var(--accent);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.bio {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.socials a {
+  color: var(--accent);
+  font-size: 1.8rem;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.socials a:hover {
+  color: #ffa94d;
+  transform: translateY(-3px);
+}

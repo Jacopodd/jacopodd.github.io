@@ -1,0 +1,42 @@
+/* ===== PROGETTI ===== */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.tab-btn {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.tab-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.show {
+  display: block;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 1.2rem;
+}
+.project-card {
+  background: var(--secondary);
+  padding: 1.2rem;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+}
+.project-card h5 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
