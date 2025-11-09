@@ -164,3 +164,62 @@
     transform: translateY(0);
   }
 }
+
+
+
+
+
+/* ===== NAV MOBILE A ICONE (solo mobile) ===== */
+.mobile-nav {
+  display: none;
+}
+
+/* Mostra la pill di icone su mobile e nasconde la navbar tradizionale */
+@media (max-width: 900px) {
+  .navbar { display: none; }
+
+  .mobile-nav {
+    position: sticky;      /* resta in alto quando scrolli */
+    top: 0.5rem;           /* distanza dal bordo superiore */
+    z-index: 30;
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    width: fit-content;
+    margin: 0.5rem auto 1rem;
+    padding: 0.6rem 0.9rem;
+    background: rgba(22, 27, 34, 0.95); /* var(--secondary) con opacità */
+    border-radius: 9999px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .mobile-nav a {
+    color: #e6edf3; /* var(--text) */
+    text-decoration: none;
+    font-size: 1.25rem;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 9999px;
+    transition: color .2s ease, background .2s ease, transform .15s ease;
+  }
+
+  .mobile-nav a:hover {
+    color: var(--accent);
+    background: rgba(255,127,17,0.08);
+    transform: translateY(-1px);
+  }
+
+  /* Stato attivo (scroll spy o focus tastiera) */
+  .mobile-nav a.active,
+  .mobile-nav a:focus-visible {
+    color: var(--accent);
+    background: rgba(255,127,17,0.15);
+    outline: none;
+  }
+}
+

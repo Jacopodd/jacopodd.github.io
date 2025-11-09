@@ -100,6 +100,16 @@
         </div>
       </header>
 
+      <!-- NAV MOBILE A ICONE -->
+      <nav class="mobile-nav" aria-label="Navigazione principale (mobile)">
+        <a href="#home"       aria-label="Home"        title="Home"><i class="fa-solid fa-house"></i></a>
+        <a href="#projects"   aria-label="Progetti"    title="Progetti"><i class="fa-regular fa-folder"></i></a>
+        <a href="#experience" aria-label="Esperienze"  title="Esperienze"><i class="fa-solid fa-briefcase"></i></a>
+        <a href="#about"      aria-label="Chi sono"    title="Chi sono"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+        <a href="#contact"    aria-label="Contatti"    title="Contatti"><i class="fa-regular fa-pen-to-square"></i></a>
+      </nav>
+
+
 
       <!-- === HERO === -->
       <section class="hero" id="home">
@@ -283,6 +293,24 @@
       navLinks.classList.toggle("show");
     });
   </script>
+
+  <script>
+  const sections = document.querySelectorAll("section[id]");
+  const mobLinks = document.querySelectorAll(".mobile-nav a");
+
+  function setActive() {
+    let current = "";
+    sections.forEach(s => {
+      const top = s.offsetTop - 140;          // un po' di margine
+      if (window.scrollY >= top) current = s.id;
+    });
+    mobLinks.forEach(a => {
+      a.classList.toggle("active", a.getAttribute("href").slice(1) === current);
+    });
+  }
+  setActive();
+  window.addEventListener("scroll", setActive, { passive: true });
+</script>
 
 </body>
 </html>
