@@ -1,66 +1,140 @@
-/* ===== CARD PROFILO (SINISTRA) ===== */
-.profile-section {
-  width: 30%;
-  min-width: 320px;
-  background: var(--secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 3px 0 10px rgba(0,0,0,0.3);
-  position: sticky;
-  top: 0;
-  height: 100vh;
+/* ===== CARD PROFILO (LATERALE SU DESKTOP, SEZIONE NORMALE SU MOBILE) ===== */
+
+/* ===== DESKTOP ===== */
+@media (min-width: 901px) {
+  .layout {
+    display: flex;
+    flex-direction: row; /* ✅ Sidebar sinistra + contenuto destra */
+    height: 100vh;
+  }
+
+  /* Sidebar sinistra fissa */
+  .profile-section {
+    width: 28%;
+    min-width: 320px;
+    background: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0; /* ✅ Fissa sotto l’header */
+    height: 100vh;
+    z-index: 1;
+  }
+
+  .profile-card {
+    text-align: center;
+    max-width: 300px;
+    padding: 2rem;
+  }
+
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    object-fit: contain;
+    background-color: var(--secondary);
+    margin-bottom: 1.2rem;
+    box-shadow: 0 0 25px rgba(255, 127, 17, 0.3);
+  }
+
+  .name {
+    color: var(--accent);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+
+  .bio {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+    margin-top: 1.5rem;
+  }
+
+  .socials a {
+    color: var(--accent);
+    font-size: 1.8rem;
+    transition: color 0.3s, transform 0.2s;
+  }
+
+  .socials a:hover {
+    color: #ffa94d;
+    transform: translateY(-3px);
+  }
+
+  /* Sezione di destra scrollabile */
+  .content-section {
+    flex: 1;
+    overflow-y: auto;
+    height: 100vh;
+    scroll-behavior: smooth;
+    padding: 0 3rem;
+  }
 }
 
-.profile-card {
-  text-align: center;
-  max-width: 300px;
-  padding: 2rem;
-}
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .layout {
+    display: flex;
+    flex-direction: column; /* ✅ Card sopra, poi contenuto */
+    height: auto;
+  }
 
-.profile-pic {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 3px solid var(--accent);
-  object-fit: contain;
-  background-color: var(--secondary);
-  margin-bottom: 1.2rem;
-  box-shadow: 0 0 25px rgba(255,127,17,0.3);
-}
+  .profile-section {
+    position: static;
+    width: 100%;
+    height: auto;
+    background: var(--secondary);
+    box-shadow: none;
+    padding: 2rem 1rem;
+  }
 
-.name {
-  color: var(--accent);
-  font-size: 1.8rem;
-  font-weight: 700;
-}
+  .profile-card {
+    background: var(--secondary);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    margin: 0 auto 2rem;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
 
-.subtitle {
-  font-weight: 600;
-  margin-bottom: 1rem;
-  opacity: 0.9;
-}
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
 
-.bio {
-  font-size: 0.95rem;
-  opacity: 0.85;
-  margin-bottom: 1.5rem;
-}
+  .name {
+    font-size: 1.6rem;
+  }
 
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
-}
+  .bio {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
 
-.socials a {
-  color: var(--accent);
-  font-size: 1.8rem;
-  transition: color 0.3s, transform 0.2s;
-}
+  .socials a {
+    font-size: 1.6rem;
+  }
 
-.socials a:hover {
-  color: #ffa94d;
-  transform: translateY(-3px);
+  .content-section {
+    height: auto;
+    overflow: visible;
+    padding: 1.5rem;
+  }
 }

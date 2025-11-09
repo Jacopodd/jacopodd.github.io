@@ -57,7 +57,12 @@
 
       <!-- === HEADER === -->
       <header class="navbar">
-        <h2 class="logo">Jacopo D.D.</h2>
+        <h2 class="logo">Jacopo de Dominicis</h2>
+
+        <button class="menu-toggle" aria-label="Apri menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
         <nav>
           <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -67,6 +72,7 @@
             <li><a href="#contact">Contatti</a></li>
           </ul>
         </nav>
+
         <div class="language-switcher">
           <select id="language-selector">
             <option value="it" selected>🇮🇹 Italiano</option>
@@ -74,6 +80,7 @@
           </select>
         </div>
       </header>
+
 
       <!-- === HERO === -->
       <section class="hero" id="home">
@@ -243,6 +250,18 @@
         btn.classList.add("active");
         document.getElementById(btn.dataset.target).classList.add("show");
       });
+    });
+  </script>
+
+ 
+
+  <script>
+    // Toggle per il menu mobile
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    toggleBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
     });
   </script>
 
