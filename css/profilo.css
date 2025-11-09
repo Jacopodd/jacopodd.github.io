@@ -1,14 +1,16 @@
-/* ===== CARD PROFILO (LATERALE SU DESKTOP, SEZIONE NORMALE SU MOBILE) ===== */
+/* =====================================
+   PROFILO — FISSO SU DESKTOP / NORMALE SU MOBILE
+   ===================================== */
 
 /* ===== DESKTOP ===== */
 @media (min-width: 901px) {
   .layout {
     display: flex;
-    flex-direction: row; /* ✅ Sidebar sinistra + contenuto destra */
+    flex-direction: row;
     height: 100vh;
   }
 
-  /* Sidebar sinistra fissa */
+  /* PROFILO LATERALE SINISTRA */
   .profile-section {
     width: 28%;
     min-width: 320px;
@@ -18,8 +20,8 @@
     justify-content: center;
     box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
     position: sticky;
-    top: 0; /* ✅ Fissa sotto l’header */
-    height: 100vh;
+    top: 4.5rem; /* ✅ sotto l’header */
+    height: calc(100vh - 4.5rem);
     z-index: 1;
   }
 
@@ -34,7 +36,7 @@
     height: 180px;
     border-radius: 50%;
     border: 3px solid var(--accent);
-    object-fit: contain;
+    object-fit: cover;
     background-color: var(--secondary);
     margin-bottom: 1.2rem;
     box-shadow: 0 0 25px rgba(255, 127, 17, 0.3);
@@ -71,6 +73,7 @@
     color: var(--accent);
     font-size: 1.8rem;
     transition: color 0.3s, transform 0.2s;
+    text-decoration: none;
   }
 
   .socials a:hover {
@@ -78,7 +81,7 @@
     transform: translateY(-3px);
   }
 
-  /* Sezione di destra scrollabile */
+  /* SEZIONE CONTENUTO DESTRA */
   .content-section {
     flex: 1;
     overflow-y: auto;
@@ -92,7 +95,7 @@
 @media (max-width: 900px) {
   .layout {
     display: flex;
-    flex-direction: column; /* ✅ Card sopra, poi contenuto */
+    flex-direction: column;
     height: auto;
   }
 
@@ -100,41 +103,63 @@
     position: static;
     width: 100%;
     height: auto;
-    background: var(--secondary);
+    background: transparent;
     box-shadow: none;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem 0;
   }
 
   .profile-card {
     background: var(--secondary);
     border-radius: 12px;
     padding: 2rem 1.5rem;
-    margin: 0 auto 2rem;
+    margin: 1rem auto 2.5rem;
+    max-width: 90%;
     text-align: center;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
   }
 
   .profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 1rem;
+    border: 2px solid var(--accent);
   }
 
   .name {
     font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 1rem;
   }
 
   .bio {
     font-size: 0.9rem;
     line-height: 1.5;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .socials {
+    gap: 1.5rem;
   }
 
   .socials a {
+    color: var(--accent);
     font-size: 1.6rem;
+    text-decoration: none;
+  }
+
+  .socials a:hover {
+    color: #ffa94d;
   }
 
   .content-section {
     height: auto;
     overflow: visible;
-    padding: 1.5rem;
+    padding: 0 1.2rem;
   }
 }
