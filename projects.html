@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Progetti – Jacopo de Dominicis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Tutti i progetti di Jacopo de Dominicis — con filtri, categorie e ricerca." />
+
+  <!-- CSS principale -->
+  <link rel="stylesheet" href="css/index.css" />
+
+  <!-- CSS dedicato ai progetti -->
+  <link rel="stylesheet" href="css/projects.css" />
+</head>
+
+<body>
+<div class="page">
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <div class="nav-dot"></div>
+        <span>Jacopo de Dominicis</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#about">Chi sono</a>
+        <a href="projects.html">Progetti</a>
+        <a href="index.html#experience">Esperienze</a>
+        <a href="index.html#contact">Contatti</a>
+      </nav>
+      <button class="nav-cta" onclick="window.location.href='index.html#contact'">
+        <span>●</span> Disponibile
+      </button>
+    </div>
+  </header>
+
+  <!-- HEADER -->
+  <main class="section projects-page">
+    <div class="section-inner">
+
+      <div class="section-header js-scroll">
+        <div>
+          <div class="section-kicker">Portfolio</div>
+          <h2 class="section-title">Esplora tutti i progetti</h2>
+        </div>
+        <p class="section-sub">
+          Filtra per categoria, linguaggio o cerca direttamente quello che ti interessa.
+        </p>
+      </div>
+
+      <!-- PROGETTO PRINCIPALE -->
+    <section class="featured-project with-bg">
+    <div class="featured-overlay"></div>
+
+    <div class="featured-badge">In sviluppo</div>
+
+    <h3>AInkStudio</h3>
+    <p>
+        Web-app avanzata per applicare tatuaggi dinamici su un modello 3D
+        con texture generate tramite <strong>Gemini API</strong>.
+    </p>
+
+    <div class="tags">
+        <span>Three.js</span><span>WebGL</span><span>Gemini API</span>
+        <span>Python</span><span>Node.js</span>
+    </div>
+    </section>
+
+
+
+      <!-- FILTRI -->
+      <div class="filters js-scroll">
+        <input id="searchInput" type="text" placeholder="Cerca un progetto...">
+
+        <select id="filterCategory">
+          <option value="">Tutte le categorie</option>
+          <option value="blockchain">Blockchain</option>
+          <option value="security">Security</option>
+          <option value="data">Data</option>
+          <option value="ml">Machine Learning</option>
+        </select>
+
+        <select id="filterLang">
+          <option value="">Tutti i linguaggi</option>
+          <option value="python">Python</option>
+          <option value="javascript">JavaScript</option>
+          <option value="java">Java</option>
+          <option value="go">Go</option>
+        </select>
+      </div>
+
+      <!-- CATEGORIE -->
+      <section id="projectsGrid">
+
+        <!-- BLOCKCHAIN -->
+        <div class="category">
+          <h3>🔗 Blockchain</h3>
+          <div class="projects-grid">
+
+            <div class="project-card"
+                 data-cat="blockchain"
+                 data-lang="go">
+              <h4>MediChain</h4>
+              <p>
+                Sistema permissioned su Hyperledger Fabric per gestire
+                prescrizioni mediche in modo tracciabile e sicuro.
+              </p>
+              <div class="tags">
+                <span>Go</span>
+                <span>Hyperledger</span>
+                <span>Docker</span>
+              </div>
+              <a href="https://github.com/Jacopodd/Medichain" target="_blank">GitHub ↗</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SECURITY -->
+        <div class="category">
+          <h3>🔐 Security tools</h3>
+          <div class="projects-grid">
+
+            <div class="project-card"
+                 data-cat="security"
+                 data-lang="java">
+              <h4>PassVault</h4>
+              <p>Password manager locale cifrato AES + SHA-256.</p>
+              <div class="tags">
+                <span>Java</span>
+                <span>AES</span>
+                <span>SHA-256</span>
+              </div>
+              <a href="https://github.com/Jacopodd/PassVault" target="_blank">GitHub ↗</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- DATA -->
+        <div class="category">
+          <h3>📊 Data & Web</h3>
+          <div class="projects-grid">
+
+            <div class="project-card"
+                 data-cat="data"
+                 data-lang="python">
+              <h4>AirbnbAnalyzer</h4>
+              <p>Flask + MongoDB per analisi mercato affitti a breve termine.</p>
+              <div class="tags">
+                <span>Python</span>
+                <span>Flask</span>
+                <span>MongoDB</span>
+              </div>
+              <a href="https://github.com/Jacopodd/AirbnbAnalyzer" target="_blank">GitHub ↗</a>
+            </div>
+
+            <div class="project-card"
+                 data-cat="data"
+                 data-lang="python">
+              <h4>Pangraph</h4>
+              <p>
+                Analisi pangenoma con grafi di De Bruijn: confronto genomi multipli.
+              </p>
+              <div class="tags">
+                <span>Python</span>
+                <span>Bioinfo</span>
+              </div>
+              <a href="https://github.com/Jacopodd/Pangraph" target="_blank">GitHub ↗</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ML -->
+        <div class="category">
+          <h3>🤖 Machine Learning</h3>
+          <div class="projects-grid">
+
+            <div class="project-card"
+                 data-cat="ml"
+                 data-lang="python">
+              <h4>FaceQCNet</h4>
+              <p>Pipeline Python per analisi qualità immagini facciali.</p>
+              <div class="tags">
+                <span>Python</span>
+                <span>ML</span>
+                <span>Vision</span>
+              </div>
+              <a href="https://github.com/Jacopodd/FaceQCNet" target="_blank">GitHub ↗</a>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>© <span id="year-js"></span> · Jacopo de Dominicis</div>
+      <div class="footer-links">
+        <a href="index.html#hero">Home</a>
+        <a href="projects.html">Progetti</a>
+        <a href="index.html#contact">Contatti</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+document.getElementById("year-js").textContent = new Date().getFullYear();
+
+const search = document.getElementById("searchInput");
+const filterCat = document.getElementById("filterCategory");
+const filterLang = document.getElementById("filterLang");
+const cards = document.querySelectorAll(".project-card");
+
+function applyFilters() {
+  const q = search.value.toLowerCase();
+  const cat = filterCat.value;
+  const lang = filterLang.value;
+
+  cards.forEach(card => {
+    const title = card.querySelector("h4").textContent.toLowerCase();
+    const desc = card.querySelector("p").textContent.toLowerCase();
+    const tags = card.querySelector(".tags").textContent.toLowerCase();
+
+    const cCat = card.dataset.cat;
+    const cLang = card.dataset.lang;
+
+    const matchesText = title.includes(q) || desc.includes(q) || tags.includes(q);
+    const matchesCat = !cat || cCat === cat;
+    const matchesLang = !lang || cLang === lang;
+
+    card.style.display = matchesText && matchesCat && matchesLang ? "block" : "none";
+  });
+}
+
+search.addEventListener("input", applyFilters);
+filterCat.addEventListener("change", applyFilters);
+filterLang.addEventListener("change", applyFilters);
+</script>
+
+</body>
+</html>

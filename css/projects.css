@@ -1,0 +1,136 @@
+/* ---- LAYOUT ---- */
+
+.projects-page {
+  padding-top: 40px;
+}
+
+.featured-project {
+  padding: 28px;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  background: #fafafa;
+  margin-bottom: 40px;
+}
+
+.featured-badge {
+  background: black;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.filters input,
+.filters select {
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+.category {
+  margin-top: 40px;
+}
+
+.category h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ---- CARD ---- */
+
+.project-card {
+  border: 1px solid #eaeaea;
+  padding: 22px;
+  border-radius: 16px;
+  background: white;
+  transition: 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+}
+
+.project-card h4 {
+  margin-bottom: 6px;
+}
+
+.project-card p {
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.tags span {
+  background: #f0f0f0;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.project-card a {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.featured-project.with-bg {
+  position: relative;
+  padding: 40px;
+  border-radius: 24px;
+  overflow: hidden;
+  color: white;
+  background: url("../images/cover.png") center/cover no-repeat;
+}
+
+.featured-project.with-bg .featured-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+}
+
+.featured-project.with-bg * {
+  position: relative;
+  z-index: 2;
+}
+
+.featured-project.with-bg h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.featured-project.with-bg p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 18px;
+}
+
+.featured-project.with-bg .tags span {
+  background: rgba(255,255,255,0.15);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
