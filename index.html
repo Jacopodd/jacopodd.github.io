@@ -2,372 +2,575 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>Jacopo de Dominicis – Cybersecurity & Software Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Portfolio personale di Jacopo de Dominicis, sviluppatore software con background in sicurezza informatica. Progetti, esperienze e contatti."
+  />
 
-
-  <title>Jacopo de Dominicis – Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/profilo.css" />
-  <link rel="stylesheet" href="css/navbar.css" />
-  <link rel="stylesheet" href="css/hero.css" />
-  <link rel="stylesheet" href="css/progetti.css" />
-  <link rel="stylesheet" href="css/esperienza.css" />
-
-
+  <link rel="stylesheet" href="css/index.css"/>
 </head>
+
 <body>
+  <div class="page">
 
-  <main class="layout">
-
-    <!-- ====== SINISTRA — CARD PROFILO ====== -->
-    <aside class="profile-section">
-      <div class="profile-card">
-        <img src="images/profile.png" alt="Foto profilo Jacopo D.D." class="profile-pic" />
-        <h1 class="name">Jacopo de Dominicis</h1>
-        <p class="subtitle">Studente Magistrale in Sicurezza Informatica</p>
-        <p class="bio">
-          Appassionato di sviluppo software, cybersecurity e integrazione hardware.
-          Mi piace unire tecnologia, sicurezza e automazione in soluzioni che connettono
-          il mondo digitale con quello fisico.
-        </p>
-
-        <div class="socials">
-          <a href="https://www.linkedin.com/in/jacopo-de-dominicis-b17ba5239/" target="_blank" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/jacopodd" target="_blank" aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a href="mailto:jacopodedominicisdeveloper@gmail.com" aria-label="Email">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
+    <!-- NAV -->
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="nav-logo">
+          <div class="nav-dot"></div>
+          <span>Jacopo de Dominicis</span>
         </div>
-
-
-      </div>
-    </aside>
-
-    <!-- ====== DESTRA — CONTENUTO SCORRIBILE ====== -->
-    <div class="content-section">
-
-      <!-- === HEADER === -->
-      <header class="navbar">
-        <h2 class="logo">Jacopo de Dominicis</h2>
-
-        <button class="menu-toggle" aria-label="Apri menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-
-        <nav>
-          <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Chi sono</a></li>
-            <li><a href="#projects">Progetti</a></li>
-            <li><a href="#experience">Esperienze</a></li>
-            <li><a href="#contact">Contatti</a></li>
-          </ul>
+        <nav class="nav-links">
+          <a href="#hero">Home</a>
+          <a href="#about">Chi sono</a>
+          <a href="#projects">Progetti</a>
+          <a href="#experience">Esperienze</a>
+          <a href="#contact">Contatti</a>
         </nav>
+        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          <span>●</span> Disponibile per ruoli in sviluppo e cybersecurity
+        </button>
+      </div>
+    </header>
 
-        <div class="language-switcher">
-          <select id="language-selector">
-            <option value="it" selected>🇮🇹 Italiano</option>
-            <option value="en">🇬🇧 English</option>
-          </select>
-        </div>
-      </header>
+    <!-- HERO -->
+    <main id="hero" class="hero">
+      <div class="hero-inner">
+        <div class="hero-main js-scroll">
 
-      <!-- NAV MOBILE A ICONE -->
-      <nav class="mobile-nav" aria-label="Navigazione principale (mobile)">
-        <a href="#home"       aria-label="Home"        title="Home"><i class="fa-solid fa-house"></i></a>
-        <a href="#projects"   aria-label="Progetti"    title="Progetti"><i class="fa-regular fa-folder"></i></a>
-        <a href="#experience" aria-label="Esperienze"  title="Esperienze"><i class="fa-solid fa-briefcase"></i></a>
-        <a href="#about"      aria-label="Chi sono"    title="Chi sono"><i class="fa-solid fa-screwdriver-wrench"></i></a>
-        <a href="#contact"    aria-label="Contatti"    title="Contatti"><i class="fa-regular fa-pen-to-square"></i></a>
-      </nav>
+           <!-- IMMAGINE HERO -->
+          <div class="hero-photo-wrapper">
+            <img
+              src="images/profile.png"
+              alt="Jacopo de Dominicis"
+              class="hero-photo"
+            />
+          </div>
+          <!-- FINE IMMAGINE HERO -->
 
-
-
-      <!-- === HERO === -->
-      <section class="hero" id="home">
-        <div class="hero-content">
-          <h2><span class="highlight">CYBERSECURITY</span><br>DEVELOPER</h2>
-          <p>
-            Mi occupo di sviluppo software e sicurezza informatica, con attenzione alla qualità del codice
-            e all’integrazione tra sistemi. Sono interessato alle soluzioni che uniscono software e hardware,
-            come Raspberry Pi e, in prospettiva, piattaforme di realtà aumentata come i Ray-Ban Meta.
+          <div class="hero-badge">
+            <div class="hero-badge-dot">👋</div>
+            <div class="hero-badge-label">Studente Magistrale in Sicurezza Informatica</div>
+          </div>
+          <h1 class="hero-title">
+            Progetto soluzioni digitali <span>sicure, scalabili</span> e curate nel dettaglio.
+          </h1>
+          <p class="hero-sub">
+            Sono uno sviluppatore software con un forte background in sicurezza informatica e sviluppo web.
+            Studio Informatica – curriculum Sicurezza Informatica all’Università di Salerno e lavoro su progetti
+            che spaziano da blockchain permissioned e password manager sicuri a sistemi per l’analisi dati
+            e il monitoraggio di sensori fisici.
           </p>
-          <a href="#projects" class="btn">Guarda i miei progetti</a>
-        </div>
-      </section>
 
-      <!-- === ABOUT === -->
-      <section id="about" class="about">
-        <h3>Chi sono</h3>
-        <p>
-          Sono uno studente magistrale in Sicurezza Informatica presso l’Università degli Studi di Salerno.
-          Durante il mio percorso accademico ho approfondito la programmazione, la sicurezza dei sistemi e
-          la progettazione di software, sviluppando un approccio orientato all’affidabilità e alla qualità del codice.
-        </p>
-        <p>
-          Ho consolidato competenze in sviluppo backend e web, analisi delle vulnerabilità, blockchain e automazione,
-          con una crescente attenzione verso l’integrazione hardware e l’Internet of Things.
-        </p>
-        <p>
-          Mi appassiona esplorare come la sicurezza e l’innovazione possano convergere in progetti che uniscono
-          dispositivi fisici e ambienti digitali, dai sistemi embedded a soluzioni di realtà aumentata.
-        </p>
-        <p>
-          Il mio obiettivo è crescere professionalmente nel campo della cybersecurity e dello sviluppo software,
-          contribuendo alla creazione di tecnologie sicure, versatili e orientate al futuro.
-        </p>
-      </section>
-
-      <!-- === PROJECTS === -->
-      <section id="projects" class="projects">
-        <h3>Progetti</h3>
-
-        <div class="tabs">
-          <button class="tab-btn active" data-target="uni">Università</button>
-          <button class="tab-btn" data-target="personal">Personale</button>
-        </div>
-
-        <div id="uni" class="tab-content show">
-          <div class="project-grid">
-            <div class="project-card reveal" data-aos="fade-up" data-aos-delay="100">
-              <h5>Analisi di Sicurezza di Reti</h5>
-              <p>Monitoraggio del traffico e rilevazione di anomalie su dataset accademici.</p>
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Focus</span>
+              <span class="hero-meta-value">Sviluppo software · Cybersecurity applicata</span>
             </div>
-            <div class="project-card reveal" data-aos="fade-up" data-aos-delay="100">
-              <h5>Applicazione Web Sicura</h5>
-              <p>Web app con controlli OWASP e autenticazione sicura in Flask.</p>
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Stack tecnologico</span>
+              <span class="hero-meta-value">Java · JavaScript · Python · Express.js · Docker</span>
             </div>
-            <div class="project-card reveal" data-aos="fade-up" data-aos-delay="100">
-              <h5>Forensics di Base</h5>
-              <p>Catena di custodia, carving file e timeline analysis su casi di laboratorio.</p>
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Base operativa</span>
+              <span class="hero-meta-value">Italia · Remoto / Ibrido</span>
             </div>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="window.open('#', '_blank')">
+              Scarica CV
+              <span class="btn-icon">↘︎</span>
+            </button>
+            <button class="btn btn-secondary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+              Guarda i miei progetti
+              <span class="btn-icon">↓</span>
+            </button>
           </div>
         </div>
 
-        <div id="personal" class="tab-content">
-          <div class="project-grid">
-            <div class="project-card">
-              <h5>Tool di Recon modulare</h5>
-              <p>Raccolta OSINT da domini/DNS/IP con output JSON e filtri di priorità.</p>
+        <aside class="hero-side js-scroll js-scroll-delay-1">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <div class="hero-card-title">Dashboard percorso</div>
+              <div class="hero-card-pill">Informatica · Cybersecurity 🔐</div>
             </div>
-            <div class="project-card">
-              <h5>Honeypot SSH / HTTP</h5>
-              <p>Servizi finti per studiare attacchi reali e loggarli in modo sicuro.</p>
+
+            <div class="hero-timeline">
+              <div class="hero-timeline-item">
+                <div>
+                  <div class="hero-timeline-role">Tecnico Informatico · Optosensing</div>
+                  <div class="hero-timeline-meta">Giugno 2025 – oggi · Avellino</div>
+                </div>
+                <div class="hero-timeline-meta">Integrazione sensori & web app</div>
+              </div>
+              <div class="hero-timeline-item">
+                <div>
+                  <div class="hero-timeline-role">Sviluppatore Web · Triconline</div>
+                  <div class="hero-timeline-meta">Maggio 2024 – Luglio 2025 · Avellino</div>
+                </div>
+                <div class="hero-timeline-meta">E-commerce su Express.js</div>
+              </div>
+              <div class="hero-timeline-item">
+                <div>
+                  <div class="hero-timeline-role">Università degli Studi di Salerno</div>
+                  <div class="hero-timeline-meta">Laurea in Informatica · Triennale</div>
+                </div>
+                <div class="hero-timeline-meta">Tesi su digitalizzazione prescrizioni (MediChain)</div>
+              </div>
             </div>
-            <div class="project-card">
-              <h5>Mini SIEM</h5>
-              <p>Ingest log e correlazione base con dashboard minimale.</p>
+
+            <div class="hero-skills">
+              <span class="hero-skill-pill">Cybersecurity · Secure Coding</span>
+              <span class="hero-skill-pill">Express.js · JavaScript</span>
+              <span class="hero-skill-pill">Java · Python</span>
+              <span class="hero-skill-pill">Hyperledger Fabric · Blockchain</span>
+              <span class="hero-skill-pill">Docker · Linux</span>
+            </div>
+
+            <div class="hero-card-footer">
+              <div>
+                <strong>Disponibile da subito</strong><br />
+                Per ruoli junior in sviluppo software e sicurezza informatica.
+              </div>
+              <div>Ultimo aggiornamento portfolio · 2025</div>
+            </div>
+
+            <div class="floating-blur floating"></div>
+            <div class="floating-tag floating">
+              <div class="floating-tag-dot"></div>
+              <span>Stato: aperto a nuove collaborazioni</span>
             </div>
           </div>
+        </aside>
+      </div>
+    </main>
+
+
+
+    <!-- CHI SONO -->
+    <section id="about" class="section">
+      <div class="section-inner js-scroll js-scroll-delay-1">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Chi sono</div>
+            <h2 class="section-title">Sviluppo, sicurezza e voglia di sperimentare.</h2>
+          </div>
+          <p class="section-sub">
+            Unisco una formazione solida in Informatica a un interesse concreto per sicurezza, automazione
+            e integrazione tra software e mondo fisico. Mi piace lavorare su progetti reali, con impatto misurabile.
+          </p>
         </div>
-      </section>
 
-
-        <!-- === EXPERIENCE === -->
-      <section id="experience" class="experience">
-        <h3>Esperienza</h3>
-
-        <!-- ===== UNIVERSITÀ ===== -->
-        <div class="exp-block">
-          <h4>🎓 Formazione Universitaria</h4>
-          <div class="exp-item">
-            <h5>Laurea Magistrale in Informatica – Curriculum Sicurezza Informatica</h5>
-            <p class="exp-place">Università degli Studi di Salerno · 2024 – Attuale</p>
-            <p class="exp-desc">
-              Approfondimento di tematiche legate alla sicurezza informatica, alla crittografia e alla progettazione
-              di sistemi sicuri. Focus su blockchain, sviluppo software e automazione.
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              Sono uno studente magistrale in Sicurezza Informatica presso l’Università degli Studi di Salerno.
+              Dopo la laurea triennale in Informatica ho deciso di approfondire in particolare sicurezza dei sistemi,
+              crittografia e progettazione di architetture software affidabili.
+            </p>
+            <p>
+              Ho esperienza nello sviluppo backend e web, nella modellazione di dati e nell’analisi di vulnerabilità,
+              con progetti che vanno da sistemi blockchain permissioned per la gestione di prescrizioni mediche
+              a password manager cifrati e applicazioni per l’analisi di dati reali.
+            </p>
+            <p>
+              Negli ultimi mesi sto lavorando anche su soluzioni che integrano sensori fisici e interfacce web,
+              con l’obiettivo di rendere osservabile e controllabile l’hardware in tempo reale tramite applicazioni
+              semplici da usare.
+            </p>
+            <p>
+              Il mio obiettivo è crescere nel campo della cybersecurity applicata e dello sviluppo software,
+              contribuendo alla creazione di tecnologie sicure, scalabili e orientate al futuro.
             </p>
           </div>
 
-          <div class="exp-item">
-            <h5>Laurea Triennale in Informatica</h5>
-            <p class="exp-place">Università degli Studi di Salerno · 2019 – 2024</p>
-            <p class="exp-desc">
-              Formazione solida in programmazione, basi di dati, algoritmi e reti di calcolatori.
-              Tesi di laurea sulla digitalizzazione del processo di prescrizione medica.
-            </p>
+          <div class="about-highlights">
+            <div class="about-highlight-card">
+              <div class="about-highlight-label">Background</div>
+              <div class="about-highlight-value">Informatica & Cybersecurity</div>
+              <div class="about-highlight-sub">
+                Laurea triennale in Informatica e magistrale in corso in Sicurezza Informatica presso UniSa.
+              </div>
+            </div>
+            <div class="about-highlight-card">
+              <div class="about-highlight-label">Focus tecnico</div>
+              <div class="about-highlight-value">Sicurezza & Web</div>
+              <div class="about-highlight-sub">
+                Sviluppo backend/web, blockchain permissioned, gestione sicura di dati e identità.
+              </div>
+            </div>
+            <div class="about-highlight-card">
+              <div class="about-highlight-label">Soft skills</div>
+              <div class="about-highlight-value">Team-first</div>
+              <div class="about-highlight-sub">
+                Comunicazione chiara, responsabilità, capacità di apprendere in fretta e di documentare il lavoro.
+              </div>
+            </div>
+            <div class="about-highlight-card">
+              <div class="about-highlight-label">Lingue</div>
+              <div class="about-highlight-value">IT · EN</div>
+              <div class="about-highlight-sub">
+                Italiano madrelingua, inglese professionale per documentazione, call tecniche e code review.
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- ===== LAVORO ===== -->
-        <div class="exp-block">
-          <h4>💼 Esperienze Lavorative</h4>
-
-          <div class="exp-item current">
-            <h5>Tecnico Informatico – Optosensing</h5>
-            <p class="exp-place">Avellino · 04/06/2025 – Attuale</p>
-            <p class="exp-desc">
-              Assunto come tecnico informatico, mi occupo della gestione e dello sviluppo dell’infrastruttura software aziendale.  
-              Sto realizzando un’applicazione web e un’app Android per consentire l’interazione e il monitoraggio in tempo reale di sensori fisici.  
-              L’obiettivo è integrare l’elaborazione dei dati provenienti dai dispositivi con un’interfaccia intuitiva e scalabile, ottimizzando il flusso tra hardware e software.
-            </p>
+    <!-- PROGETTI IN EVIDENZA -->
+    <section id="projects" class="section">
+      <div class="section-inner">
+        <div class="section-header js-scroll">
+          <div>
+            <div class="section-kicker">Progetti in evidenza</div>
+            <h2 class="section-title">Una selezione di lavori tra sicurezza, dati e web.</h2>
           </div>
-
-          <div class="exp-item">
-            <h5>Sviluppatore Web – Triconline</h5>
-            <p class="exp-place">Avellino · 05/2024 – 07/2025</p>
-            <p class="exp-desc">
-              Progettazione e sviluppo di un e-commerce basato su Express.js per consulenze tricologiche online.
-              Il sistema gestisce prodotti, ordini e pagamenti, garantendo un'esperienza utente fluida e sicura.
-            </p>
-          </div>
-
-          <div class="exp-item">
-            <h5>Ripetizioni Private di Informatica</h5>
-            <p class="exp-place">Monteforte Irpino · 2021 – 2022</p>
-            <p class="exp-desc">
-              Lezioni individuali per studenti delle scuole superiori, focalizzate su programmazione, logica e basi di informatica.
-              Esperienza che ha migliorato le mie capacità comunicative e di problem solving.
-            </p>
-          </div>
+          <p class="section-sub">
+            Dai progetti universitari a quelli personali open–source. Qui trovi alcuni esempi che mostrano come
+            affronto problemi reali: dall’hardening della sicurezza alla visualizzazione e gestione di dati complessi.
+          </p>
         </div>
-      </section>
 
+        <div class="projects-grid">
+          <!-- Progetto 1 – Medichain -->
+          <article class="project-card js-scroll js-scroll-delay-1">
+            <div class="project-chip-row">
+              <span class="project-chip">2024 · Tesi / Università</span>
+              <span>Blockchain & Sicurezza</span>
+            </div>
+            <h3 class="project-title">MediChain – Prescrizioni mediche su blockchain</h3>
+            <p class="project-desc">
+              Sistema permissioned basato su Hyperledger Fabric per gestire in modo sicuro prescrizioni mediche.
+              L’obiettivo è migliorare tracciabilità, integrità e auditabilità dei dati sanitari, riducendo errori
+              e manomissioni lungo la filiera.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Hyperledger Fabric</span>
+              <span class="project-tag">Docker</span>
+              <span class="project-tag">Security</span>
+              <span class="project-tag">Shell · Go · JS</span>
+            </div>
+            <div class="project-footer">
+              <span>Architettura distribuita e resiliente ai tampering</span>
+              <a class="project-link" href="https://github.com/Jacopodd/Medichain" target="_blank" rel="noreferrer">
+                Codice su GitHub <span>↗︎</span>
+              </a>
+            </div>
+          </article>
 
+          <!-- Progetto 2 – PassVault -->
+          <article class="project-card js-scroll js-scroll-delay-2">
+            <div class="project-chip-row">
+              <span class="project-chip">2023 · Progetto personale</span>
+              <span>Security tool</span>
+            </div>
+            <h3 class="project-title">PassVault – Password manager cifrato</h3>
+            <p class="project-desc">
+              Password manager in Java con cifratura AES e master password hashed con SHA-256.
+              Pensato per archiviare credenziali in locale in modo sicuro, senza dipendere dal cloud.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Java</span>
+              <span class="project-tag">AES</span>
+              <span class="project-tag">SHA-256</span>
+              <span class="project-tag">CLI</span>
+            </div>
+            <div class="project-footer">
+              <span>Focus su crittografia e gestione sicura delle credenziali</span>
+              <a class="project-link" href="https://github.com/Jacopodd/PassVault" target="_blank" rel="noreferrer">
+                Codice su GitHub <span>↗︎</span>
+              </a>
+            </div>
+          </article>
 
-      <!-- === CONTACT === -->
-      <section id="contact" class="contact">
-        <h3>Contatti</h3>
-        <p>Puoi trovarmi su <a href="https://github.com/jacopodd" target="_blank">GitHub</a> o scrivermi via email:</p>
-        <a href="mailto:jacopodedominicisdeveloper@gmail.com" class="btn" style="color: #fff; margin-top: 20px;">Contattami</a>
-      </section>
+          <!-- Progetto 3 – AirbnbAnalyzer -->
+          <article class="project-card js-scroll js-scroll-delay-3">
+            <div class="project-chip-row">
+              <span class="project-chip">2024 · Università</span>
+              <span>Data & Web app</span>
+            </div>
+            <h3 class="project-title">AirbnbAnalyzer – Analisi mercato affitti a breve termine</h3>
+            <p class="project-desc">
+              Applicazione basata su Flask e MongoDB per analizzare il mercato degli affitti a breve termine a Milano,
+              usando dati pubblici Inside Airbnb. Include pipeline di preprocessing, CRUD completo e interfaccia web
+              minimale per esplorare relazioni tra annunci, host, recensioni e prezzi.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Flask</span>
+              <span class="project-tag">MongoDB</span>
+              <span class="project-tag">Data pipeline</span>
+            </div>
+            <div class="project-footer">
+              <span>Combina data engineering, NoSQL e UI semplice</span>
+              <a class="project-link" href="https://github.com/Jacopodd/AirbnbAnalyzer" target="_blank" rel="noreferrer">
+                Codice su GitHub <span>↗︎</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      <!-- === FOOTER === -->
-      <footer>
-        <p>© 2025 Jacopo D.D. · Portfolio personale</p>
-      </footer>
+    <!-- ESPERIENZE -->
+    <section id="experience" class="section">
+      <div class="section-inner">
+        <div class="section-header js-scroll">
+          <div>
+            <div class="section-kicker">Esperienze</div>
+            <h2 class="section-title">Un percorso tra università, lavoro e progetti reali.</h2>
+          </div>
+          <p class="section-sub">
+            Dalla formazione accademica alle esperienze in azienda e ai progetti personali open–source.
+            Qui trovi una panoramica sintetica delle tappe più rilevanti.
+          </p>
+        </div>
 
-    </div>
-  </main>
+        <div class="experience-layout">
+          <div class="timeline js-scroll js-scroll-delay-1">
 
+            <article class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-role">Tecnico Informatico · Optosensing</h3>
+              <div class="timeline-meta">Avellino · Giugno 2025 – oggi · On-site</div>
+              <p class="timeline-desc">
+                Gestione e sviluppo dell’infrastruttura software per sistemi di monitoraggio basati su sensori fisici.
+                Sviluppo di un’applicazione web e di un’app Android per visualizzare e controllare in tempo reale
+                i dati provenienti dai dispositivi, con attenzione a scalabilità e affidabilità.
+              </p>
+              <div class="timeline-badge">Integrazione hardware–software · Realtime monitoring</div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-role">Sviluppatore Web · Triconline</h3>
+              <div class="timeline-meta">Avellino · Maggio 2024 – Luglio 2025 · Ibrido</div>
+              <p class="timeline-desc">
+                Progettazione e sviluppo di un e-commerce basato su Express.js per prodotti tricologici
+                e consulenze online. Gestione di catalogo prodotti, ordini, pagamenti e prenotazione di visite,
+                con attenzione alla sicurezza delle API e dell’autenticazione.
+              </p>
+              <div class="timeline-badge">Express.js · E-commerce · API sicure</div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-role">Laurea Magistrale in Informatica – Sicurezza Informatica</h3>
+              <div class="timeline-meta">Università degli Studi di Salerno · 2024 – in corso</div>
+              <p class="timeline-desc">
+                Approfondimento di sicurezza informatica, crittografia, blockchain, forensics
+                e progettazione di sistemi sicuri. Progetti su analisi di reti, applicazioni web sicure,
+                honeypot e mini-SIEM per raccolta e correlazione di log.
+              </p>
+              <div class="timeline-badge">Cybersecurity · Blockchain · Forensics</div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-role">Laurea Triennale in Informatica</h3>
+              <div class="timeline-meta">Università degli Studi di Salerno · 2019 – 2024</div>
+              <p class="timeline-desc">
+                Studi su algoritmi, architetture, basi di dati, reti e ingegneria del software.
+                Tesi finale su digitalizzazione del processo di prescrizione medica tramite blockchain (MediChain),
+                con focus su integrità, tracciabilità e sicurezza dei dati.
+              </p>
+              <div class="timeline-badge">Sistemi distribuiti · Sviluppo web</div>
+            </article>
+          </div>
+
+          <aside class="experience-side-card js-scroll js-scroll-delay-2">
+            <h4>Competenze principali</h4>
+            <ul>
+              <li>
+                <span class="experience-side-label">Linguaggi</span>
+                <span>Java, JavaScript, Python, C/C++, Go (base)</span>
+              </li>
+              <li>
+                <span class="experience-side-label">Web & Backend</span>
+                <span>Express.js, JavaEE, Flask, HTML/CSS, REST API</span>
+              </li>
+              <li>
+                <span class="experience-side-label">Sicurezza</span>
+                <span>Hyperledger Fabric, crittografia, secure coding, OWASP Top 10</span>
+              </li>
+              <li>
+                <span class="experience-side-label">Dati & DevOps</span>
+                <span>MongoDB, MySQL, Docker, Git, Linux</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATTI -->
+    <section id="contact" class="section">
+      <div class="section-inner">
+        <div class="section-header js-scroll">
+          <div>
+            <div class="section-kicker">Contatti</div>
+            <h2 class="section-title">Parliamo del tuo prossimo progetto o di una possibile collaborazione.</h2>
+          </div>
+          <p class="section-sub">
+            Preferisco messaggi chiari e concreti: raccontami chi sei, il contesto in cui lavori
+            e che tipo di problema o progetto vuoi affrontare insieme.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-text js-scroll js-scroll-delay-1">
+            <p>
+              Sono aperto a posizioni junior, collaborazioni freelance e progetti part-time in remoto o in modalità ibrida.
+              Mi interessano in particolare contesti in cui sicurezza, sviluppo software e dati si incontrano.
+            </p>
+            <p class="contact-highlight">
+              Puoi scrivermi <strong>via email</strong> o contattarmi su <strong>LinkedIn</strong> e <strong>GitHub</strong>.
+            </p>
+            <div class="contact-links">
+              <a class="contact-pill" href="mailto:jacopodedominicisdeveloper@gmail.com">
+                <span>✉︎</span> jacopodedominicisdeveloper@gmail.com
+              </a>
+              <a class="contact-pill" href="https://www.linkedin.com/in/jacopo-de-dominicis-b17ba5239/" target="_blank" rel="noreferrer">
+                <span>in</span> LinkedIn
+              </a>
+              <a class="contact-pill" href="https://github.com/Jacopodd" target="_blank" rel="noreferrer">
+                <span>🐙</span> GitHub
+              </a>
+              <a class="contact-pill" href="#" target="_blank" rel="noreferrer">
+                <span>⤴︎</span> Download CV
+              </a>
+            </div>
+          </div>
+
+          <form
+            class="contact-form js-scroll js-scroll-delay-2"
+            onsubmit="event.preventDefault(); alert('Grazie per il messaggio! Collega questo form a un servizio email/API quando pubblichi.');"
+          >
+            <div class="contact-form-row">
+              <div class="field">
+                <label for="name">Nome</label>
+                <input class="input" id="name" name="name" type="text" placeholder="Come ti chiami?" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input class="input" id="email" name="email" type="email" placeholder="tuo@esempio.com" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="subject">Oggetto</label>
+              <input class="input" id="subject" name="subject" type="text" placeholder="Posizione, progetto o idea" required />
+            </div>
+
+            <div class="field" style="margin-top: 10px;">
+              <label for="message">Messaggio</label>
+              <span>Raccontami brevemente chi sei, di cosa hai bisogno e i tempi indicativi.</span>
+              <textarea class="textarea" id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <div class="contact-form-footer">
+              <button type="submit" class="btn btn-primary">
+                Invia messaggio
+                <span class="btn-icon">↗︎</span>
+              </button>
+              <span>
+                Nessun invio automatico per ora.<br />
+                Collega questo form a un servizio email/API quando pubblichi.
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>© <span id="year-js"></span> · Jacopo de Dominicis. Tutti i diritti riservati.</div>
+        <div class="footer-links">
+          <a href="#hero">Torna su</a>
+          <a href="#projects">Progetti</a>
+          <a href="#contact">Contatti</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JAVASCRIPT: animazioni, scroll morbido, piccoli effetti -->
   <script>
-    // gestione tab progetti
-    const tabs = document.querySelectorAll(".tab-btn");
-    const contents = document.querySelectorAll(".tab-content");
-    tabs.forEach(btn=>{
-      btn.addEventListener("click",()=>{
-        tabs.forEach(b=>b.classList.remove("active"));
-        contents.forEach(c=>c.classList.remove("show"));
-        btn.classList.add("active");
-        document.getElementById(btn.dataset.target).classList.add("show");
+    // Aggiornamento anno footer
+    document.getElementById('year-js').textContent = new Date().getFullYear();
+
+    // Animazioni su scroll con IntersectionObserver
+    (function() {
+      var scrollElements = document.querySelectorAll('.js-scroll');
+      if (!('IntersectionObserver' in window)) {
+        scrollElements.forEach(function(el) {
+          el.classList.add('is-visible');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12
       });
-    });
-  </script>
 
- 
-
-  <script>
-    // Toggle per il menu mobile
-    const toggleBtn = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
-    toggleBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-    });
-  </script>
-
-  <script>
-  const sections = document.querySelectorAll("section[id]");
-  const mobLinks = document.querySelectorAll(".mobile-nav a");
-
-  function setActive() {
-    let current = "";
-    sections.forEach(s => {
-      const top = s.offsetTop - 140;          // un po' di margine
-      if (window.scrollY >= top) current = s.id;
-    });
-    mobLinks.forEach(a => {
-      a.classList.toggle("active", a.getAttribute("href").slice(1) === current);
-    });
-  }
-  setActive();
-  window.addEventListener("scroll", setActive, { passive: true });
-</script>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800,
-    once: true,
-    offset: 100
-  });
-</script>
-
-<script>
-  (function () {
-    const scrollRoot = document.querySelector('.content-section'); // il tuo contenitore scrollabile
-    const targets = () => Array.from(document.querySelectorAll('.reveal'));
-
-    // Stagger helper: applica un piccolo ritardo a cascata per gli elementi che entrano insieme
-    function applyStagger(entries) {
-      const byTop = entries
-        .filter(e => e.isIntersecting)
-        .sort((a,b) => a.target.getBoundingClientRect().top - b.target.getBoundingClientRect().top);
-      byTop.forEach((entry, i) => {
-        const el = entry.target;
-        // evita di riapplicare
-        if (!el.classList.contains('visible')) {
-          el.style.transitionDelay = (i * 70) + 'ms';
-          // force reflow per sicurezza
-          void el.offsetWidth;
-          el.classList.add('visible');
-        }
-      });
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      applyStagger(entries);
-    }, {
-      root: scrollRoot,      // ❤️ osserva dentro .content-section
-      rootMargin: '0px 0px -10% 0px',
-      threshold: 0.12
-    });
-
-    // osserva tutti i target attuali
-    function observeAll() {
-      targets().forEach(el => {
-        el.classList.remove('visible');            // reset per rientri o cambio tab
-        el.style.transitionDelay = '0ms';
+      scrollElements.forEach(function(el) {
         observer.observe(el);
       });
-    }
-    observeAll();
+    })();
 
-    // integra col tuo sistema di tab: quando cambi tab, ri-osserva i nuovi elementi
-    const tabs = document.querySelectorAll(".tab-btn");
-    const contents = document.querySelectorAll(".tab-content");
-
-    tabs.forEach(btn => {
-      btn.addEventListener("click", () => {
-        tabs.forEach(b => b.classList.remove("active"));
-        contents.forEach(c => c.classList.remove("show"));
-
-        btn.classList.add("active");
-        const shown = document.getElementById(btn.dataset.target);
-        shown.classList.add("show");
-
-        // ricollega gli osservatori sugli elementi appena resi visibili
-        // Aspetta un frame perché max-height/opacity inizino la transizione
-        requestAnimationFrame(() => {
-          // disosserva tutto per sicurezza
-          observer.disconnect();
-          observeAll();
+    // Scroll morbido per anchor (fallback per browser senza CSS scroll-behavior)
+    (function() {
+      var links = document.querySelectorAll('a[href^="#"]');
+      links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var targetId = this.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+          var target = document.querySelector(targetId);
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
         });
       });
-    });
+    })();
 
-    // prima evidenziazione dello stato attivo in mobile-nav l'hai già fatta
-    // non serve altro qui
-  })();
-</script>
+    // Piccolo effetto parallax su elementi floating nel hero
+    (function() {
+      var hero = document.querySelector('.hero');
+      var floatings = document.querySelectorAll('.floating');
+      if (!hero || floatings.length === 0) return;
 
+      hero.addEventListener('mousemove', function(e) {
+        var rect = hero.getBoundingClientRect();
+        var x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+        var y = (e.clientY - rect.top - rect.height / 2) / rect.height;
 
+        floatings.forEach(function(el, index) {
+          var intensity = (index + 1) * 12;
+          var translateX = -x * intensity;
+          var translateY = -y * intensity;
+          el.style.transform = 'translate3d(' + translateX + 'px, ' + translateY + 'px, 0)';
+        });
+      });
 
+      hero.addEventListener('mouseleave', function() {
+        floatings.forEach(function(el) {
+          el.style.transform = 'translate3d(0, 0, 0)';
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
